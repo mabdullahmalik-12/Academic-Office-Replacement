@@ -1,87 +1,93 @@
 #include <iostream>
+#include "AcademicEntity.h"
+#include "Student.h"
+#include "Courses.h"
+#include "CourseType.h"
+#include "Assessment.h"
+#include "AssessmentType.h"
 using namespace std;
 
-class AcademicEntity{
+// class AcademicEntity{
 
-protected:
-string ID;
-string name;
-string email;
+// protected:
+// string ID;
+// string name;
+// string email;
 
-public:
-virtual void displayProfile() =0;
-};
+// public:
+// virtual void displayProfile() =0;
+// };
 
-class ScholarshipStudent: public AcademicEntity{
-private:
-float GPA;
+// class ScholarshipStudent: public AcademicEntity{
+// private:
+// float GPA;
 
-public:
+// public:
 
-};
+// };
 
-class ExchangeStudent: public AcademicEntity{
+// class ExchangeStudent: public AcademicEntity{
 
-private:
-bool Credits;
+// private:
+// bool Credits;
 
-public:
+// public:
 
-};
+// };
 
-class RegularStudent{
-private:
-char grade;
+// class RegularStudent{
+// private:
+// char grade;
 
-public:
-
-
-};
+// public:
 
 
-class Courses{
-protected:
-string coursecode;
-string courseName;
-string file_path;
-
-public:
+// };
 
 
+// class Courses{
+// protected:
+// string coursecode;
+// string courseName;
+// string file_path;
 
-};
-
-class CoreCourse: public Courses{
-private:
-float weightage;
-float examscore;
-string timeSlot;
-
-public:
+// public:
 
 
-};
 
-class ElectiveCourse: public Courses{
-private:
-float weightage;
-float Assignmentscore;
-float finalprojectscore;
-float timeSlot;
+// };
 
-public:
+// class CoreCourse: public Courses{
+// private:
+// float weightage;
+// float examscore;
+// string timeSlot;
 
-};
+// public:
 
-class LabCourse: public Courses{
-private:
-float weightage;
-float assessmentscore;
-string venue;
 
-public:
+// };
 
-};
+// class ElectiveCourse: public Courses{
+// private:
+// float weightage;
+// float Assignmentscore;
+// float finalprojectscore;
+// float timeSlot;
+
+// public:
+
+// };
+
+// class LabCourse: public Courses{
+// private:
+// float weightage;
+// float assessmentscore;
+// string venue;
+
+// public:
+
+// };
 
 int main()
 {
