@@ -17,5 +17,34 @@ AcademicEntity(string a = "0000", string b ="----", string c ="xyz@gmail.com")
     email = c;
 }
 
+void setID(string id)
+{
+    ID = id;
+}
+
+void setName(string inp)
+{
+    name = inp;
+}
+
+void setEmail(string Email)
+{
+    email = Email;
+}
+
+string getID()
+{
+    return ID;
+}
+string getName()
+{
+    return name;
+}
+
+string getEmail()
+{
+    return email;
+}
+
 virtual void displayProfile() =0;
 };

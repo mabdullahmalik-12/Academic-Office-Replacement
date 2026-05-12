@@ -39,6 +39,10 @@ void addAssessment(Assessment* a)
 };
 
 float examDuration() override {};
+string getCourseType() override
+{
+    return "Core";
+}
 };
 
 class ElectiveCourse: public Courses{
@@ -79,6 +83,11 @@ void addAssessment(Assessment* a)
 };
 
 float examDuration() override {};
+
+string getCourseType() override
+{
+    return "Elective";
+}
 };
 
 class LabCourse: public Courses{
@@ -119,4 +128,9 @@ void addAssessment(Assessment* a)
 };
 
 float examDuration() override {};
+
+string getCourseType() override
+{
+    return "Lab";
+}
 };

@@ -5,7 +5,7 @@ using namespace std;
 
 class Student : public AcademicEntity {
 protected:
-    float GPA;
+float GPA;
 
 public:
 
@@ -14,6 +14,19 @@ Student(float a = 0.0,string str = "0000", string b ="----", string c ="xyz@gmai
     GPA =a;
 }
     virtual void viewTranscript() = 0;
+
+    void setGPA(float a)
+    {
+        GPA =a;
+    }
+
+    float getGPA()
+    {
+        return GPA;
+    }
+
+   virtual string getType() =0;
+
 };
 
 class ScholarshipStudent: public Student{
@@ -36,6 +49,21 @@ void viewTranscript() override {
     cout << "Student Status: "<< status << endl;
     //TODO: read enrolled courses and grades from file
 };
+
+void setStatus(bool stat)
+{
+    status = stat;
+}
+
+bool getStatus()
+{
+    return status;
+}
+
+string getType() override
+{
+    return "Scholarship";
+}
 
 };
 
@@ -65,6 +93,22 @@ void viewTranscript() override {
     cout << "Student Credits: Fail" <<endl;
     //TODO: read enrolled courses and grades from file
 };
+
+void setCredits(bool cred)
+{
+    Credits = cred;
+}
+
+bool getCredits()
+{
+    return Credits;
+}
+
+string getType() override
+{
+    return "Exchange";
+}
+
 };
 
 class RegularStudent: public Student{
@@ -87,4 +131,19 @@ void viewTranscript() override {
     cout << "GPA: " << GPA <<endl;
     //TODO: read enrolled courses and grades from file
 };
+
+void setGrade(char g)
+{
+    grade = g;
+}
+
+char getGrade()
+{
+    return grade;
+}
+
+string getType() override
+{
+    return "Regular";
+}
 };

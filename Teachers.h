@@ -94,5 +94,17 @@ void AddComment(string comment)
 
     comments[commentCount][commentsize] = '\0';
     commentCount++;
-}
+};
+
+float getAverageFeedback()        
+{ 
+return averageFeedback;
+};
+
+void  setAverageFeedback(float f)
+{
+averageFeedback = f; 
+};
+
+
 };

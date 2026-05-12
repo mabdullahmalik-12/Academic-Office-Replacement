@@ -31,4 +31,55 @@ void DisplaySection()
     cout << "Time Slot: " << timeSlot << endl<<endl;
 }
 
+
+string getSectionID()           
+{
+return sectionID; 
+}
+
+string getCourseID()            
+{ 
+return courseID; 
+}
+
+string getTeacherID()           
+{ 
+return teacherID; 
+}
+
+string getVenueID()             
+{ 
+return venueID; 
+}
+
+string getTimeSlot()            
+{ 
+return timeSlot; 
+}
+
+void   setSectionID(string s)   
+{ 
+sectionID = s; 
+}
+
+void   setCourseID(string c)    
+{ 
+courseID = c; 
+}
+
+void   setTeacherID(string t)   
+{ 
+teacherID = t; 
+}
+
+void   setVenueID(string v)     
+{ 
+venueID = v; 
+}
+
+void   setTimeSlot(string t)    
+{ 
+timeSlot = t; 
+}
+
 };

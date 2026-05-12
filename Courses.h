@@ -20,4 +20,25 @@ Courses(string a = "0000", string b= "abcd", string c="nopath")
 virtual float calculateFinalGrade() = 0;
 virtual float examDuration()=0;
 
+string getCourseCode()          
+{
+return coursecode; 
+}
+
+string getCourseName()          
+{
+return courseName; 
+}
+
+void setCourseCode(string c)  
+{
+coursecode = c; 
+}
+
+void setCourseName(string n)  
+{
+courseName = n; 
+}
+
+virtual string getCourseType() =0;
 };

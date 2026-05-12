@@ -32,15 +32,34 @@ DataBase( string sf = "Students.txt",string tf = "Teachers.txt",string cf = "Cou
 
 void saveStudent(Student * s)
 {
+ofstream file("Students.txt", ios::app);
 
+    if(!file.is_open())
+    {
+        cout << "Error in opening student file" <<endl;
+        return;
+    }
+
+    file << s->getID() << "|" << s->getName() << "|" << s->getType() << "|" << s->getGPA() << endl;
+    file.close();
 };
+
 void loadStudents(){
 
 };
 
 void saveTeacher(Teachers* t)
 {
+ofstream file("Teachers.txt", ios::app);
 
+    if(!file.is_open())
+    {
+        cout << "Error in opening student file" <<endl;
+        return;
+    }
+
+file << t->getID() << "|" << t->getName() << "|" << t->getAverageFeedback() << endl;
+file.close();
 };
 void loadTeachers(){
 
@@ -48,14 +67,28 @@ void loadTeachers(){
 
 void saveCourses(Courses*c)
 {
+    ofstream file("Courses.txt", ios::app);
 
+    if(!file.is_open())
+    {
+        cout << "Error in opening student file" <<endl;
+        return;
+    }
+
+    file << c->getCourseCode() << "|" << c->getCourseName() << "|" << c->getCourseType()<< "|"; //Add teacherID by searching ;
 };
 void loadCourses();
 
 
 void saveSection(Section* s)
 {
+    ofstream file("Courses.txt", ios::app);
 
+    if(!file.is_open())
+    {
+        cout << "Error in opening student file" <<endl;
+        return;
+    }
 };
 void loadSection(){
 
@@ -63,7 +96,13 @@ void loadSection(){
 
 void saveVenue(Venues* v)
 {
+    ofstream file("Courses.txt", ios::app);
 
+    if(!file.is_open())
+    {
+        cout << "Error in opening student file" <<endl;
+        return;
+    }
 };
 void loadVenues()
 {
@@ -72,7 +111,13 @@ void loadVenues()
 
 void saveStudentCourse(string studentID, string courseID, float grade)
 {
+    ofstream file("Courses.txt", ios::app);
 
+    if(!file.is_open())
+    {
+        cout << "Error in opening student file" <<endl;
+        return;
+    }
 };
 void loadStudentCourses(string studentID)
 {
@@ -81,11 +126,17 @@ void loadStudentCourses(string studentID)
 
 void saveTeacherCourse(string teacherID, string courseID)
 {
+    ofstream file("Courses.txt", ios::app);
 
+    if(!file.is_open())
+    {
+        cout << "Error in opening student file" <<endl;
+        return;
+    }
 };
 void loadTeacherCourses(string teacherID)
 {
-    
+
 };
 
 };

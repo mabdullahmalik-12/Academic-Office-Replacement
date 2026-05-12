@@ -27,4 +27,35 @@ void displayVenue()
     //TODO: read venue from the file 
 }
 
+void setroomID(string id)
+{
+    roomID = id;
+}
+
+void setCapacity(int cap)
+{
+    Capacity = cap;
+}
+
+void setComputers(bool a)
+{
+    hasComp =a;
+}
+
+string getRoomID()          
+{
+return roomID; 
+}
+
+int    getCapacity()        
+{
+return Capacity; 
+}
+
+bool   getHasComp()         
+{
+return hasComp; 
+}
+
+
 };
