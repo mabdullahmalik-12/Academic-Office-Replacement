@@ -9,8 +9,6 @@ private:
 float weightage;
 string timeSlot;
 string venue;
-Assessment* assessments[3];
-int assessmentcount;
 public:
 
 CoreCourse(string code = "0000", string name = "----", string path = "no_path", float a =0.0, string c ="00:00", string d = "----"): Courses(code, name, path)
@@ -32,11 +30,6 @@ float calculateFinalGrade() override{
     return total;
 };
 
-void addAssessment(Assessment* a)
-{
-    assessments[assessmentcount]= a;
-    assessmentcount++;
-};
 
 float examDuration() override { return 180;}
 string getCourseType() override
@@ -51,8 +44,6 @@ float weightage;
 float finalprojectscore;
 string timeSlot;
 string venue;
-Assessment* assessments[3];
-int assessmentcount;
 public:
 
 ElectiveCourse(float a =0.0, float c = 0, string d= "00:00", string e = "----", string code = "0000", string name = "----", string path = "no_path"): Courses(code, name, path)
@@ -61,7 +52,6 @@ ElectiveCourse(float a =0.0, float c = 0, string d= "00:00", string e = "----", 
     finalprojectscore = c;
     timeSlot = d;
     venue =e;
-    assessmentcount =0;
     
 }
 
@@ -76,11 +66,6 @@ float calculateFinalGrade() override{
     return total;
 };
 
-void addAssessment(Assessment* a) 
-{
-    assessments[assessmentcount]= a;
-    assessmentcount++;
-};
 
 float examDuration() override {return 180;};
 
@@ -95,8 +80,6 @@ private:
 float weightage;
 string venue;
 string timeSlot;
-Assessment* assessments[3];
-int assessmentcount;
 public:
 
 LabCourse(float a =0.0, string c ="00:00", string d="----", string code = "0000", string name = "----", string path = "no_path"): Courses(code, name, path)
@@ -105,7 +88,6 @@ LabCourse(float a =0.0, string c ="00:00", string d="----", string code = "0000"
     weightage = a;
     timeSlot= c;
     venue = d;
-    assessmentcount =0;
     
 }
 
@@ -121,11 +103,6 @@ float calculateFinalGrade() override{
     return total;
 };
 
-void addAssessment(Assessment* a)
-{
-    assessments[assessmentcount]= a;
-    assessmentcount++;
-};
 
 float examDuration() override {return 180;};
 

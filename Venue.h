@@ -10,7 +10,7 @@ int Capacity;
 bool hasComp;
 
 public:
-Venues(string ID = 0, int cap= 50, bool comp = true)
+Venues(string ID = " ", int cap= 50, bool comp = true)
 {
     roomID = ID;
     Capacity = cap;

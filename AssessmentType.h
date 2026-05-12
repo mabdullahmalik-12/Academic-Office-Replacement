@@ -13,8 +13,12 @@ Exam( float weightage, float raw,float a =0.0): Assessment(weightage, raw)
 }
 
 float finalScoreCalculator() override {
-    return (examScore/(float)100.0)* weightage;
+    return (examScore/rawscore)* weightage;
 };
+
+string getAssessmentType() override {
+    return "Exam"; 
+}
 };
 
 class Quiz: public Assessment{
@@ -28,8 +32,12 @@ Quiz(float weightage, float raw,float a =0.0): Assessment(weightage, raw)
 }
 
 float finalScoreCalculator() override {
-    return (quizScore/(float)100.0)* weightage;
+    return (quizScore/rawscore)* weightage;
 };
+
+string getAssessmentType() override {
+    return "Quiz"; 
+}
 };
 
 class Assignment: public Assessment{
@@ -44,6 +52,11 @@ Assignment(float a, float weightage, float raw): Assessment(weightage, raw)
 
 float finalScoreCalculator() override {
 
-    return (AssignmentScore/(float)100.0)* weightage;
+    return (AssignmentScore/rawscore)* weightage;
 };
+
+string getAssessmentType() override {
+    return "Assignment"; 
+}
+
 };

@@ -26,12 +26,13 @@ Student(float a = 0.0,string str = "0000", string b ="----", string c ="xyz@gmai
     }
 
    virtual string getType() =0;
-
+   virtual void calculateGPA()=0;
 };
 
 class ScholarshipStudent: public Student{
 private:
 bool status;
+string file_path;
 public:
 ScholarshipStudent(bool a = true, float val = 0.0,string str = "0000", string b ="----", string c ="xyz@gmail.com"): Student(val, str,b,c)
 {
@@ -46,7 +47,10 @@ void viewTranscript() override {
     cout << "Student Name: " << name <<endl;
     cout << "Student ID: " << ID <<endl;
     cout << "GPA: " << GPA <<endl;
-    cout << "Student Status: "<< status << endl;
+    if(status = true)
+    cout << "Student Scholarship Status : Active" << endl;
+    else
+    cout << "Student Scholarship Status: Probation" <<endl;
     //TODO: read enrolled courses and grades from file
 };
 
@@ -65,6 +69,24 @@ string getType() override
     return "Scholarship";
 }
 
+string getFilePath() {
+    return file_path; 
+}
+
+void calculateGPA() override{
+
+    if (GPA <(float)2.8)
+    {
+        status= false;
+       cout << "Warning: " << name << " is on Probation! GPA " << GPA << " is below minimum GPA of 2.8" << endl;
+    }
+
+     else
+    {
+        status = true;
+        cout << name << " is in good standing. GPA: " << GPA << endl;
+    }
+}
 };
 
 class ExchangeStudent: public Student{
@@ -109,6 +131,9 @@ string getType() override
     return "Exchange";
 }
 
+void calculateGPA() override {
+cout << "Exchange students use Pass/Fail only" << endl;
+}
 };
 
 class RegularStudent: public Student{
@@ -145,5 +170,9 @@ char getGrade()
 string getType() override
 {
     return "Regular";
+}
+
+void calculateGPA() override {
+    cout << "GPA: " << GPA << endl;
 }
 };
