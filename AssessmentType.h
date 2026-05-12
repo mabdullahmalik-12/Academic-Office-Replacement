@@ -22,7 +22,7 @@ private:
 float quizScore;
 
 public:
-Quiz(float a =0.0, float weightage, float raw): Assessment(weightage, raw)
+Quiz(float weightage, float raw,float a =0.0): Assessment(weightage, raw)
 {
     quizScore =a ;
 }

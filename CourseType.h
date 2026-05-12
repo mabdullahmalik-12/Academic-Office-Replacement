@@ -38,7 +38,7 @@ void addAssessment(Assessment* a)
     assessmentcount++;
 };
 
-float examDuration() override {};
+float examDuration() override { return 180;}
 string getCourseType() override
 {
     return "Core";
@@ -76,13 +76,13 @@ float calculateFinalGrade() override{
     return total;
 };
 
-void addAssessment(Assessment* a)
+void addAssessment(Assessment* a) 
 {
     assessments[assessmentcount]= a;
     assessmentcount++;
 };
 
-float examDuration() override {};
+float examDuration() override {return 180;};
 
 string getCourseType() override
 {
@@ -127,7 +127,7 @@ void addAssessment(Assessment* a)
     assessmentcount++;
 };
 
-float examDuration() override {};
+float examDuration() override {return 180;};
 
 string getCourseType() override
 {
