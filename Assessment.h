@@ -3,7 +3,7 @@ using namespace std;
 
 
 class Assessment{
-private:
+protected:
 float weightage;
 float rawscore;
 

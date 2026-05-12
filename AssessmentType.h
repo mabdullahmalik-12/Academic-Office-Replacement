@@ -7,12 +7,14 @@ private:
 float examScore;
 
 public:
-Exam(float a =0.0, float weightage, float raw): Assessment(weightage, raw)
+Exam( float weightage, float raw,float a =0.0): Assessment(weightage, raw)
 {
     examScore = a;
 }
 
-float finalScoreCalculator() override {};
+float finalScoreCalculator() override {
+    return (examScore/(float)100.0)* weightage;
+};
 };
 
 class Quiz: public Assessment{
@@ -25,7 +27,9 @@ Quiz(float a =0.0, float weightage, float raw): Assessment(weightage, raw)
     quizScore =a ;
 }
 
-float finalScoreCalculator() override {};
+float finalScoreCalculator() override {
+    return (quizScore/(float)100.0)* weightage;
+};
 };
 
 class Assignment: public Assessment{
@@ -38,5 +42,8 @@ Assignment(float a, float weightage, float raw): Assessment(weightage, raw)
     AssignmentScore =a;
 }
 
-float finalScoreCalculator() override {};
+float finalScoreCalculator() override {
+
+    return (AssignmentScore/(float)100.0)* weightage;
+};
 };

@@ -7,70 +7,116 @@ using namespace std;
 class CoreCourse: public Courses{
 private:
 float weightage;
-float examscore;
 string timeSlot;
 string venue;
-Assessment* ptr;
-
+Assessment* assessments[3];
+int assessmentcount;
 public:
 
-CoreCourse(float a =0.0, float b= 0, string c ="00:00", string d = "----",Assessment* pointer,  string code = "0000", string name = "----", string path = "no_path"): Courses(code, name, path)
+CoreCourse(string code = "0000", string name = "----", string path = "no_path", float a =0.0, string c ="00:00", string d = "----"): Courses(code, name, path)
 {
     weightage = a;
-    examscore = b;
     timeSlot = c;
     venue= d;
-    *ptr = *pointer;
+    assessmentcount = 0;
 }
 
-float calculateFinalGrade() override{};
+float calculateFinalGrade() override{
+
+    float total =0.0;
+    for(int i =0; i < assessmentcount;i++)
+    {
+        total += assessments[i]->finalScoreCalculator();
+    }
+
+    return total;
+};
+
+void addAssessment(Assessment* a)
+{
+    assessments[assessmentcount]= a;
+    assessmentcount++;
+};
+
 float examDuration() override {};
 };
 
 class ElectiveCourse: public Courses{
 private:
 float weightage;
-float Assignmentscore;
 float finalprojectscore;
 string timeSlot;
 string venue;
-Assessment* ptr;
+Assessment* assessments[3];
+int assessmentcount;
 public:
 
-ElectiveCourse(float a =0.0, float b= 0, float c = 0, string d= "00:00", string e = "----",Assessment* pointer, string code = "0000", string name = "----", string path = "no_path"): Courses(code, name, path)
+ElectiveCourse(float a =0.0, float c = 0, string d= "00:00", string e = "----", string code = "0000", string name = "----", string path = "no_path"): Courses(code, name, path)
 {
     weightage = a;
-    Assignmentscore = b;
     finalprojectscore = c;
     timeSlot = d;
     venue =e;
+    assessmentcount =0;
     
 }
 
-float calculateFinalGrade() override{};
+float calculateFinalGrade() override{
+
+    float total =0.0;
+    for(int i =0; i < assessmentcount;i++)
+    {
+        total += assessments[i]->finalScoreCalculator();
+    }
+
+    return total;
+};
+
+void addAssessment(Assessment* a)
+{
+    assessments[assessmentcount]= a;
+    assessmentcount++;
+};
+
 float examDuration() override {};
 };
 
 class LabCourse: public Courses{
 private:
 float weightage;
-float assessmentscore;
 string venue;
 string timeSlot;
-Assessment* ptr;
-
+Assessment* assessments[3];
+int assessmentcount;
 public:
 
-LabCourse(float a =0.0, float b= 0, string c ="00:00", string d="----", string code = "0000", string name = "----", string path = "no_path"): Courses(code, name, path)
+LabCourse(float a =0.0, string c ="00:00", string d="----", string code = "0000", string name = "----", string path = "no_path"): Courses(code, name, path)
 {
     
     weightage = a;
-    assessmentscore = b;
     timeSlot= c;
     venue = d;
+    assessmentcount =0;
     
 }
 
-float calculateFinalGrade() override{};
+
+float calculateFinalGrade() override{
+
+    float total =0.0;
+    for(int i =0; i < assessmentcount;i++)
+    {
+        total += assessments[i]->finalScoreCalculator();
+    }
+
+    return total;
+};
+
+void addAssessment(Assessment* a)
+{
+    assessments[assessmentcount]= a;
+    assessmentcount++;
+};
+
 float examDuration() override {};
 };
