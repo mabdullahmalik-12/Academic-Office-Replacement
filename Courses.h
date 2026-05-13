@@ -89,7 +89,6 @@ void setTeacherID(string a)
 {
     teacherID =a;
 }
-virtual string getCourseType() =0;
 
 bool registerStudent(string studentID)
 {

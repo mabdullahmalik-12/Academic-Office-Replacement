@@ -287,6 +287,7 @@ void adminMenu()
         cout << "11. View All Courses" << endl;
         cout << "12. View All Sections" << endl;
         cout << "13. View All Venues" << endl;
+        cout << "14. View All Teachers"<<endl;
         cout << "0.  Exit" << endl;
         cout << "Enter choice: ";
         cin >> choice;
@@ -401,11 +402,14 @@ void adminMenu()
             cin >> type;
             cout << endl;
 
-            if(type < 1 || type > 3) { cout << "Invalid type." << endl; continue; }
+            if(type < 1 || type > 3) {
+                cout << "Invalid type." << endl; 
+                continue; 
+            }
 
             Courses* c;
             if(type == 1)
-                c = new CoreCourse(code, name);
+                 c = new CoreCourse(code, name);
             else if(type == 2)
                 c = new ElectiveCourse(0.0, 0.0, "00:00", "----", code, name);
             else
@@ -637,6 +641,30 @@ void adminMenu()
                     cout << endl;
                 }
                 cout << "Total: " << db.getVenueCount() << " venue(s)." << endl;
+            }
+        }
+
+        else if( choice == 14)
+        {
+            db.loadTeachers();
+            if(db.getTeacherCount() == 0)
+            {
+                cout << "No teachers found" <<endl;
+            }
+
+            else
+            {
+                cout << "=========================" << endl;
+                cout << "       ALL TEACHERS        " << endl;
+                cout << "=========================" << endl;
+
+                for(int i =0; i < db.getTeacherCount();i++)
+                {
+                    cout <<"Teacher Name: " << db.getTeachers(i)->getName() <<endl;
+                    cout << "Teacher ID: " << db.getTeachers(i)->getID() <<endl;
+                    cout << "Average Feedback: " << db.getTeachers(i)->getAverageFeedback() << endl;
+                }
+                cout << "Total: " << db.getTeacherCount() << "Teacher(s)." <<endl;
             }
         }
 
